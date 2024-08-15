@@ -10,12 +10,12 @@ def dis(x,y):
         ans += (x[i] - y[i])**2
     return ans
 
-# ƒƒCƒ“ƒf[ƒ^ƒZƒbƒg‚Ìƒ[ƒh
+# ãƒ¯ã‚¤ãƒ³ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆã®ãƒ­ãƒ¼ãƒ‰
 wine = load_wine()
 
-# ƒf[ƒ^‚Æƒ^[ƒQƒbƒg‚Ìæ“¾
-X = wine.data  # “Á’¥—Êƒf[ƒ^
-y = wine.target  # ƒ‰ƒxƒ‹ƒf[ƒ^
+# ãƒ‡ãƒ¼ã‚¿ã¨ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®å–å¾—
+X = wine.data  # ç‰¹å¾´é‡ãƒ‡ãƒ¼ã‚¿
+y = wine.target  # ãƒ©ãƒ™ãƒ«ãƒ‡ãƒ¼ã‚¿
 n,m = X.shape
 
 mu = np.mean(X,axis=0)
@@ -50,4 +50,4 @@ f = 0
 f += stats.mode(new_label[0:58]).count
 f += stats.mode(new_label[59:129]).count
 f += stats.mode(new_label[130:177]).count
-print("ƒNƒ‰ƒXƒ^ƒŠƒ“ƒO¬Œ÷—¦F{:.3f}".format(f/178))
+print("ã‚¯ãƒ©ã‚¹ã‚¿ãƒªãƒ³ã‚°æˆåŠŸç‡ï¼š{:.3f}".format(f/178))
