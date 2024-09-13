@@ -1,0 +1,31 @@
+name: Python CI
+
+# トリガーとなるイベントを定義します。ここではpushとpull requestの時に実行。
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # テストが実行される環境を定義
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2  # リポジトリのコードをチェックアウト
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2  # Python環境をセットアップ
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # 依存関係をインストール
+
+      - name: Run tests
+        run: pytest  # pytestを使ってテストを実行
